@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Form</title>
+  <style>
+    body {
+      background-color:rgb(193, 216, 216);
+      color: rgb(30, 60, 32);
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: pink;
+      border-bottom: 3px solid blue;
+      box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navigation_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .logo_container img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .my h1 {
+      font-size: 32px;
+      font-weight: bold;
+      color: #0db43a;
+      margin: 0;
+    }
+
+    .bar_icon a {
+      padding: 10px 18px;
+      margin: 0 5px;
+      background-color: rgb(108, 126, 232);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      display: inline-block;
+    }
+
+    .bar_icon a:hover {
+      background-color: blue;
+    }
+
+    form {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: rgb(25, 0, 255);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    fieldset {
+      border: 1px solid #999;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: brown;
+      color: white;
+      font-size: 18px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: darkred;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .required-note {
+      color: red;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="navigation_container">
+      <div class="logo_container">
+        <img src="rooms service.png" alt="logo" />
+      </div>
+      <div class="my">
+        <h1>MY ROOMS</h1>
+      </div>
+      <div class="bar_icon">
+        <a href="index.html">Home</a>
+        <a href="room.html">Rooms</a>
+        <a href="paymet.html">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Payment Form -->
+  <form>
+    <h1>Payment Form</h1>
+    <p class="required-note">* Required fields</p>
+
+    <h2>Contact Information</h2>
+    <label for="name">Name: *</label>
+    <input type="text" name="name" placeholder="Enter your full name" required />
+
+    <fieldset>
+      <legend>Gender *</legend>
+      <label><input type="radio" name="gender" value="male" required /> Male</label>
+      <label><input type="radio" name="gender" value="female" required /> Female</label>
+    </fieldset>
+
+    <label for="address">Address:</label>
+    <textarea name="address" cols="30" rows="5" placeholder="Enter your address"></textarea>
+
+    <label for="mobile">Mobile Number:</label>
+    <input type="number" name="mobile" placeholder="Enter your number" />
+
+    <label for="email">Email: *</label>
+    <input type="email" name="email" placeholder="Enter your email" required />
+
+    <label for="pincode">Pincode: *</label>
+    <input type="number" name="pincode" placeholder="Enter your pincode" required />
+
+    <h2>Payment Information</h2>
+
+    <label for="card_type">Card Type: *</label>
+    <select name="card_type" required>
+      <option value="">--Select a card type--</option>
+      <option value="visa">Visa</option>
+      <option value="rupay">Rupay</option>
+      <option value="mastercard">Master Card</option>
+      <option value="paypal">PayPal</option>
+    </select>
+
+    <label for="card_number">Card Number: *</label>
+    <input type="number" name="card_number" required />
+
+    <label for="exp_date">Expiration Date: *</label>
+    <input type="date" name="exp_date" required />
+
+    <label for="cvv">CVV: *</label>
+    <input type="password" name="cvv" required />
+
+    <input type="submit" value="Pay Now" />
+    <input type="reset" value="Reset" />
+  </form>
+
+</body>
+</html>
